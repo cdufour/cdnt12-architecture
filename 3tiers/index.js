@@ -2,7 +2,9 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 const fs = require('fs');
-const { list, all, allStudents } = require('./controllers/StudentController');
+const { get } = require('http');
+const { list, all, allStudents, veryAllStudents, byId } 
+  = require('./controllers/StudentController');
 
 // setting du moteur de rendu
 app.set('view engine', 'pug');
@@ -59,7 +61,9 @@ app.get('/student', (req, res) => {
 })
 
 // lien direct entre une route à une méthode de contrôleur
-app.get('/student/all', allStudents)
+app.get('/student/all', veryAllStudents)
+
+app.get('/student/:id', byId)
 
 
 app.listen(PORT, () => {

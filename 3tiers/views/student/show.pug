@@ -1,0 +1,11 @@
+h2(id="h2") #{student.firstname} #{student.lastname}
+p
+  a(href="/student/all") Liste
+
+script(src="https://code.jquery.com/jquery-3.6.0.slim.min.js")
+
+script.
+ var h2 = document.getElementById('h2');
+ h2.addEventListener('click', () => {
+   console.log('click sur h2')
+ })

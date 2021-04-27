@@ -1,4 +1,5 @@
 const connection = require('../config/database');
+const { Student } = require('../models/Student');
 connection.connect();
 
 const students = ['Jérémy', 'Chris', 'Clémentine'];
@@ -23,4 +24,28 @@ const allStudents = (req, res) => {
   //connection.end();
 }
 
-module.exports = { list, all, allStudents }
+const veryAllStudents = async (req, res) => {
+  const students = await Student.findAll();
+  //const students = results.map(student => student.firstname);
+
+  // const students = results.map(
+  //   student => student.firstname + ' ' + student.lastname);
+
+
+
+  res.render('student/list', { students });
+}
+
+const byId = async (req, res) => {
+  const { id } = req.params;
+  const student = await Student.findByPk(id);
+  
+  if (student === null) {
+    res.send('ID inconnu');
+  } else {
+    res.render('student/show', { student })
+  }
+}
+
+
+module.exports = { list, all, allStudents, veryAllStudents, byId }
