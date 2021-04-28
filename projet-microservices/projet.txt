@@ -6,7 +6,7 @@ Création d'une architecture microservices
 # Services Back
 
 ## Service Token
-Dispose du liste d'utilisateurs, harcoded ou bien stockés en base de données.
+Dispose d'une liste d'utilisateurs, harcoded ou bien stockés en base de données.
 Expose 2 points d'accès (endpoints):
 
 - 1 endpoint permettant à un utilisateur d'obtenir un token
