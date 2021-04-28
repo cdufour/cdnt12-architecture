@@ -1,3 +1,5 @@
+const axios = require('axios');
+
 /**
  * HTTP Server Settings
  * (sails.config.http)
@@ -29,7 +31,7 @@ module.exports.http = {
     *                                                                          *
     ***************************************************************************/
 
-    // order: [
+    order: [
     //   'cookieParser',
     //   'session',
     //   'bodyParser',
@@ -38,7 +40,8 @@ module.exports.http = {
     //   'router',
     //   'www',
     //   'favicon',
-    // ],
+      'demoLogger'
+    ],
 
 
     /***************************************************************************
@@ -54,6 +57,25 @@ module.exports.http = {
     //   var middlewareFn = skipper({ strict: true });
     //   return middlewareFn;
     // })(),
+
+    demoLogger: async (req, res, next) => {
+      const ua = req.header('User-Agent');
+      
+      console.log(req.method, req.url, ua);
+
+      if (ua.includes('curl')) {
+        // exemple: requête vers service de collecte de données
+        // pour analyse
+        
+        const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1');
+        const todoTitle = response.data.title; 
+
+        // attente de la réponse du service jsonplaceholder avant de répondre à notre client1
+        return res.send('Je ne parle à CURL, je préfère: ' + todoTitle); 
+      }
+
+      return next();
+    }
 
   },
 
