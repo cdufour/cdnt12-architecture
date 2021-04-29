@@ -6,6 +6,7 @@
 module.exports.http = {
   middleware: {
     order: [
+      'bodyParser',
       'cors'
     ],
     cors: (req, res, next) => {

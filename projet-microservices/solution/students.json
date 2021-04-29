@@ -1,0 +1,20 @@
+[
+  {
+    "firstname": "Paolo",
+    "lastname": "Dybala",
+    "email": "p.dybala@juve.it",
+    "age": 27
+  },
+  {
+      "firstname": "Albert",
+      "lastname": "Einstein",
+      "email": "beber@atomic.de",
+      "age": 125
+  },
+  {
+    "firstname": "Momo",
+    "lastname": "Einstein",
+    "email": "momo@atomic.de",
+    "age": 23
+  }
+]

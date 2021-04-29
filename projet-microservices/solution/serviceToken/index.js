@@ -49,15 +49,15 @@ app.post('/creds', (req, res) => {
 app.post('/token', (req, res) => {
   const { token } = req.body;
 
-  if (!token) return res.send('TOKEN_NOT_CORRECT');
-
   var foundToken = false;
+
+  if (!token) return res.json({foundToken});
 
   users.forEach(user => {
     if (user.token === token) foundToken = true;
   })
 
-  return res.send({foundToken})
+  return res.json({foundToken})
 })
 
 app.listen(port, () => {

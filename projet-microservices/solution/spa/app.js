@@ -13,6 +13,7 @@
   var password = document.getElementById('password');
   var btnSend = document.getElementById('btnSend');
   var info = document.getElementById('info');
+  
   var token = null;
 
   btnSend.addEventListener('click', function(e) {
@@ -63,4 +64,4 @@
     })
   }
 
-})()
+})() // IIFE

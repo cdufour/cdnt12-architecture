@@ -11,7 +11,6 @@ module.exports = {
   index: async (req, res) => {
 
     const studentIds = await Student.find({select: ['id']});
-    console.log(studentIds)
     res.json(studentIds);
 
   },
