@@ -11,6 +11,17 @@ node index.js
 [Vidéo](https://opusidea-training.s3.eu-west-3.amazonaws.com/projet-microservices/serviceToken.webm)  
 
 
+## Dossier serviceTokenDotNet
+Application **.Net Core 5** permettant d'obtenir un token et de vérifier si un token existe  
+Lancement du service:
+```
+cd project-microservices/solution/serviceTokenDotNet
+dotnet restore
+dotnet run
+```
+[Vidéo](https://opusidea-training.s3.eu-west-3.amazonaws.com/projet-microservices/serviceTokenDotNet.webm)  
+
+
 ## Dossier serviceStudent
 Application **sailjs** permettant d'obtenir la liste des ids des étudiants enregistrés en base  
 ainsi que le détail d'un étudiant à partir de son id  
